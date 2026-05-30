@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "IdentityCopilot",
+  "version": "1.0.0",
+  "description": "Browser-native AI assistant that understands forms like a human.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content/index.ts"]
+    }
+  ]
+}
