@@ -1,7 +1,11 @@
 import { detectAndAutofill } from './formDetector';
 
-// Listen for messages from the extension popup
-chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
+const ext = (globalThis as any).chrome;
+ext.runtime.onMessage.addListener((
+  request: { type: string },
+  _sender: any,
+  sendResponse: (response: any) => void
+) => {
   if (request.type === 'AUTOFILL_FORM') {
     detectAndAutofill().then(filledCount => {
       console.log(`[IdentityCopilot] Successfully auto-filled ${filledCount} fields.`);
