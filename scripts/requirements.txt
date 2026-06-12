@@ -1,0 +1,16 @@
+# Core
+Pillow>=10.0.0
+
+# OCR (install at least one)
+easyocr>=1.7
+pytesseract>=0.3.10
+
+# PDF
+PyMuPDF>=1.23.0
+
+# Embeddings
+sentence-transformers>=2.2.0
+
+# Server mode (optional)
+flask>=3.0.0
+flask-cors>=4.0.0
